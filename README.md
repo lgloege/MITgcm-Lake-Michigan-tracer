@@ -1,8 +1,7 @@
 # MITgcm-Michigan-Phosphorus
 
 <p align="center">
- <!--  <img height="300" src="https://github.com/lgloege/test_repo/blob/master/results/figures/Figure_1.png">
-    -->
+   <img height="300" src="https://github.com/lgloege/MITgcm-Michigan-Phosphorus/blob/master/results/figures_clean/Figure_1.pdf">
 </p>
 
 This directory contains a realistic three-dimensional hydrodynamic model of Lake Michigan
