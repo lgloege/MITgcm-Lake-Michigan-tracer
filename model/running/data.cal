@@ -1,0 +1,13 @@
+#
+# *******************
+# Calendar Parameters for wind variation
+# *******************
+# modelstep, modelstart, modelstartdate, and modeliter0.
+ &CAL_NML
+ TheCalendar='gregorian',
+# TheCalendar='model',
+## YYYY:MT:DD
+ startDate_1=20050101,
+## HH:MM:SS
+ startDate_2=000000,
+ &

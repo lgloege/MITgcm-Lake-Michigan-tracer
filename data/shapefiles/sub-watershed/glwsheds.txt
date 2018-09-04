@@ -1,0 +1,44 @@
+Data for the political entities within the Great Lakes Basin were drawn from the
+North American Transportation Atlas Data - 1998  (NORTAD), prepared by the
+U.S. Department of  Transportation (USDOT), Bureau of Transportation Statistics (BTS).
+(http://www.bts.gov/cgi-bin/gis/nor.pl/)
+Base scale for U.S. state boundaries = 1:100,000
+Base scale for Canadian province boundaries = 1:1,000,000
+
+Watershed boundaries for the U.S. portion of the Great Lakes Basin were drawn from
+U.S. Geological Survey Hydrologic Unit Maps.
+Base scale for U.S. hydrologic units = 1:250,000
+
+Watershed boundaries for the Canadian portion of the Great Lakes Basin were drawn
+from Canada Land Inventory Level-I watershed maps distributed by GeoGratis.
+Base scale for Canada watersheds = 1:2,000,000
+
+All coverages were converted to ESRI's ArcView shapefile format, after which the watershed
+polygons were clipped to the political boundary extents. Gaps along the edges of political 
+boundaries were filled by extending watershed boundaries to the political borders and
+clipping again.
+
+Canadian and U.S. coverage sets were then merged together. Inconsistencies along the
+Canada-U.S. border were matched to the U.S. political boundary coverage, since the U.S.
+political boundary coverage has the largest base scale of the coverages being used.
+
+Shapefile coordinates and all measurement units are: Decimal Degrees
+
+--------------------------------------------
+
+Watershed identification information was retained throughout processing. U.S. data
+included individual hydrologic unit names, Canadian data delineates sub-subdivisions
+but lists only subdivision names.
+
+Lake basin delineation with respect to the five Great Lakes was matched to U.S. and
+Canadian codes with the following exceptions:
+ - The watershed covering the Essex County peninsula in Ontario had no designation in
+   the source data. It was assigned to the Lake Erie drainage basin
+ - The Niagara River basin in New York retained its HUC coding (which groups it with
+   several other basins along eastern Lake Erie), but was assigned to the Lake Ontario basin
+   for the general grouping used in this coverage
+ - Two basins at the eastern edge of Lake Ontario, the Black and the Chaumont-Perch,
+   retained their HUC codings (which group them with several other basins along the Upper
+   St. Lawrence River) but were assigned to the Lake Ontario basin for the general grouping
+   used in this coverage.
+

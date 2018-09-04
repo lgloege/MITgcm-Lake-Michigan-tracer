@@ -1,0 +1,8 @@
+# Packages
+ &PACKAGES
+ usePTRACERS=.TRUE.,
+ useMNC=.TRUE.,
+ useKPP=.TRUE.,
+ useLAKEICE=.TRUE.,
+ useRIVERS=.TRUE.,
+ /

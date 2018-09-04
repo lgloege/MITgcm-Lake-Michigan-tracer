@@ -1,0 +1,12 @@
+#
+# $Header: /u/gcmpack/MITgcm/pkg/pkg_groups,v 1.9 2005/08/24 23:24:40 jmc Exp $
+#
+#  This is the package "groups" definition file where groups of packages
+#  are defined so they can be conveniently substituted.
+#
+
+gfd : mom_common mom_fluxform mom_vecinv generic_advdiff debug mdsio rw monitor
+
+oceanic : gfd gmredi kpp
+
+atmospheric : gfd shap_filt

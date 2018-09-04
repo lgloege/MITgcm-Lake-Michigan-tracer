@@ -1,0 +1,79 @@
+#
+# *********************
+# External Forcing Data
+# *********************
+ &EXF_NML
+####### Air temp 
+## YYYY:MT:DD
+ atempstartdate1=20070101,
+## HH:MM:SS
+ atempstartdate2=000000,
+ atempperiod=10800.,
+
+####### Specific humidity 
+## YYYY:MT:DD
+ aqhstartdate1=20070101,
+## HH:MM:SS
+ aqhstartdate2=000000,
+ aqhperiod=10800.,
+
+############ For downward longwave (>0 ocean warming)
+### YYYY:MT:DD 
+ lwdownstartdate1=20070101,
+## HH:MM:SS 
+ lwdownstartdate2=000000,
+ lwdownperiod=10800.,
+##hflux_lon0    = 2
+##hflux_lon_inc = 4
+##hflux_lat0    = -78
+##hflux_lat_inc = 39*4
+##hflux_nlon    = 90
+##hflux_nlat    = 40
+#
+
+############ For downward shortwave (>0 water warming) 
+## YYYY:MT:DD 
+ swdownstartdate1=20070101,
+## HH:MM:SS
+ swdownstartdate2=000000,
+ swdownperiod=10800.,
+#
+
+####### Wind speed on x & y-directions
+## YYYY:MT:DD
+ uwindstartdate1=20070101,
+## HH:MM:SS
+ uwindstartdate2=000000,
+ uwindperiod=10800.,
+#
+## YYYY:MT:DD
+ vwindstartdate1=20070101,
+## HH:MM:SS
+ vwindstartdate2=000000,
+ vwindperiod=10800.,
+#
+
+### fresh water input
+## sfluxstartdate1=19920101,
+## sfluxstartdate2=000000,
+## sfluxperiod=2592001.0,
+## sflux_lon0    = 2
+## sflux_lon_inc = 4
+## sflux_lat0    = -78
+## sflux_lat_inc = 39*4
+## sflux_nlon    = 90
+## sflux_nlat    = 40
+#
+#
+## input files
+ lwdownfile = '../input_mich/xy.longwave.narr.new.2007.1min.bin',
+ swdownfile = '../input_mich/xy.shortwave.narr.new.2007.1min.bin',
+ uwindfile  = '../input_mich/xy.uwind.narr.new.2007.1min.bin',
+ vwindfile  = '../input_mich/xy.vwind.narr.new.2007.1min.bin',
+ atempfile  = '../input_mich/xy.temp.10m.narr.new.2007.1min.bin',
+ aqhfile    = '../input_mich/xy.shumid.narr.new.2007.1min.bin',
+
+ exf_iprec         = 32,
+ exf_yftype        = 'RS',
+&
+

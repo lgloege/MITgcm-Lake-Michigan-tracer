@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+#  $Header: /u/gcmpack/MITgcm/tools/build_options/unsupported/linux_ia32_pgf77+mpi_cg01,v 1.1 2009/07/21 20:00:19 jmc Exp $
+#
+
+FC='/usr/local/pkg/mpi/mpi-1.2.4..8a-gm-1.5/pgi/bin/mpif77'
+CC='/usr/local/pkg/mpi/mpi-1.2.4..8a-gm-1.5/pgi/bin/mpicc'
+DEFINES='-DALLOW_USE_MPI -DALWAYS_USE_MPI -DWORDLENGTH=4'
+CPP='/lib/cpp  -traditional -P'
+NOOPTFLAGS='-O0'
+
+if test "x$IEEE" = x ; then
+    #  No need for IEEE-754
+    FFLAGS='-byteswapio -r8 -Mnodclchk -Mextend'
+    FOPTIM='-fast -Mvect=cachesize:524288,transform'
+else
+    #  Try to follow IEEE-754
+    FFLAGS='-byteswapio -r8 -Mnodclchk -Mextend'
+    FOPTIM='-O0 -Mvect=sse -pc64 -Mcache_align -Kieee'
+fi
+
+INCLUDEDIRS='/usr/local/pkg/mpi/mpi-1.2.4..8a-gm-1.5/pgi/include'
+INCLUDES='-I/usr/local/pkg/mpi/mpi-1.2.4..8a-gm-1.5/pgi/include'
+LIBS='-lnetcdf'
+

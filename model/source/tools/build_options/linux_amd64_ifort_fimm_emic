@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# $Header: /u/gcmpack/MITgcm/tools/build_options/linux_amd64_ifort_fimm_emic,v 1.2 2010/03/21 18:01:13 jmc Exp $
+# $Name:  $
+
+#  optifile for fimm.bccs.uib.no
+#  http://www.parallab.uib.no/resources/cluster/nodemem
+#
+#  uses mpif90 wrapper for ifort
+#  issues:
+#  * -save option needed for GISS atmosphere
+#  * cannot use ifort options -assume, -convert
+#  * needs low optimization level
+
+FC=mpif90
+F90C=mpif90
+DEFINES='-DWORDLENGTH=1 -D_BYTESWAPIO'
+LINK='mpif90'
+CPP='/lib/cpp  -traditional -P'
+FFLAGS='-132 -r8 -i4 -save -g -traceback'
+F90FLAGS='-132 -r8 -i4 -save -g -traceback'
+FOPTIM=''
+LIBS='-L/opt/mpich/intel/lib'
+INCLUDES='$INCLUDES -I/opt/mpich/intel/include'
+INCLUDEDIRS='/opt/mpich/intel/include'
+

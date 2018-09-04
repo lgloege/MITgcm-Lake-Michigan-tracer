@@ -1,0 +1,138 @@
+# ====================
+# | Model parameters |
+# ====================
+# grid=60x30(new-bath), nonuniform 29(5~31m: new-Z),
+# Sim-pred=Jan1-Jan2, muti-4pros(15x30), DT=200s,
+# Coriolis-pa, KPP(2.E-6), hFacMin(0.1),
+# Daily-AVG, ice-mask(min=0.)+gchem, smag*10
+# Continuous equation parameters
+ &PARM01
+# Salinity= 0.3 [ppm] constant
+ tRef= 28*3., 1*0.,
+ sRef= 28*0.3, 1*0.,
+ no_slip_sides=.FALSE.,
+ no_slip_bottom=.TRUE.,
+# horizontal=Smagorinsky, Vertical=ggl90
+ viscA4=0.,
+ viscAh=0.E4,
+ diffKhT=0.E3,
+ diffKhS=0.E3,
+ viscAz=2.E-6,
+ diffKzT=2.E-6,
+ diffKzS=0.E-5,
+# freshwater heat capacity!
+  HeatCapacity_Cp = 4180.,
+# for setup of ggl90 & kpp (turbulence closure)
+ implicitDiffusion=.TRUE.,
+ implicitViscosity=.TRUE.,
+# for setup of Smagorinsky
+# viscC2smag=1.405,
+ viscC2smag=1.405,
+ viscC4smag=0.,
+# Coriolis parameter reads a file
+ beta=0.E-11,
+ f0=1.e-4,
+ tAlpha=2.E-4,
+ sBeta =7.4E-4,
+ gravity=9.806,
+ gBaro=9.806,
+# rhonil=1035.,
+ rhonil=1000.,
+ rigidLid=.FALSE.,
+ implicitFreeSurface=.TRUE.,
+ eosType='JMD95Z',
+ nonHydrostatic=.FALSE.,
+#ivdc_kappa=100.,
+ bottomDragQuadratic=1.E-3,
+ tempStepping=.TRUE.,
+ tempAdvScheme=33,
+ tempForcing=.TRUE.,
+ saltStepping=.FALSE.,
+# saltAdvScheme=3,
+ momStepping=.TRUE.,
+ multiDimAdvection= .TRUE.,
+ allowFreezing=.TRUE.,
+ useCDscheme=.FALSE.,
+ useRealFreshWaterFlux=.FALSE.,
+ hFacMin=0.1,
+ hFacMinDz=5.0d0,
+ readBinaryPrec=32,
+ debugMode=.FALSE.,
+ /
+
+# Elliptic solver parameters
+ &PARM02
+ cg2dMaxIters=300,
+ cg2dTargetResidual=1.E-13,
+ cg3dMaxIters=300,
+ cg3dTargetResidual=1.E-13,
+ /
+
+# Time stepping parameters
+ &PARM03
+# running for one year
+# startTime=0.,
+# startTime=31536000.,
+ startTime=63072000.
+# endTime=31536000.,
+# endTime=63072000.,
+ endTime=94608000.,
+# endTime=126230400.,
+ deltaTmom=200.,
+#tauCD =     321428.,
+ deltaTtracer=200.,
+# deltaTClock = 2400.0,
+# abEps = 0.1,
+#cAdjFreq = -1,
+# use chkptFreq = 5256000 to get 6 pickups per year
+# use chkptFreq = 7776000 to get Apr1 pickup
+# pchkptFreq=5256000.,
+# chkptFreq=5256000.,
+ pchkptFreq=7776000.,
+ chkptFreq=7776000.,
+ dumpFreq=86400.,
+ taveFreq=86400.,
+ monitorFreq=7884000.,
+# one month = 2628000.,
+# one month during leap year: 2635200
+# taveFreq= 2592000.,
+# tauThetaClimRelax = 1314000.0,
+# tauThetaClimRelax = 657000.0,
+# tauSaltClimRelax =  2628000.0,
+# periodicExternalForcing=.TRUE.,
+# externForcingPeriod=86400.,
+# externForcingCycle=31536000.,
+ /
+
+# Gridding parameters
+ &PARM04
+ usingCartesianGrid=.FALSE.,
+ usingSphericalPolarGrid=.TRUE.,
+ delX=200*1.6666666667E-2,
+ delY=276*1.6666666667E-2,
+ delZ=5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.5, 6.1, 6.7, 7.4, 8.2, 9.1, 10.1, 11.2, 12.4, 13.7, 15.2, 16.8, 18.6, 20.6, 22.8, 25.3, 28.0, 31.0, 31.0,
+ phiMin=41.56,
+ thetaMin=-88.10,
+ /
+
+# Input datasets
+ &PARM05
+# single precision data file --> should not be too long file name!!
+ bathyFile='bathy_Lake_Michigan_1min.bin',
+# hydrogThetaFile='/ptmp/benesh/10km_forcing/T2to3_LS_10km.bin',
+ hydrogThetaFile=,
+ hydrogSaltFile=,
+ zonalWindFile=,
+ meridWindFile=,
+ thetaClimFile=,
+ saltClimFile=,
+# short wave (SW) file to work properly here
+ surfQFile=,
+ surfQnetFile=,
+ EmPmRFile=,
+ the_run_name='michigan_2007_11_tribs_',
+# Coriolis parameters
+# fCoriCFile='bathy10/fcrc_Lake_Superior_r4.bin',
+# fCoriGFile='bathy10/fcrg_Lake_Superior_r4.bin',
+# fCorCsFile='bathy10/fcrs_Lake_Superior_r4.bin',
+ /

@@ -1,0 +1,30 @@
+# RIVER parameters
+# *********************
+# External GCHEM & NPZDCAR Forcing Data
+# *********************
+ &RIVERS_NML
+
+####### River Flow
+## YYYY:MT:DD
+ rivflowstartdate1=20070101,
+## HH:MM:SS
+ rivflowstartdate2=000000,
+ rivflowperiod=86400.,
+
+############## flow should have units of:
+## input files
+ rivflowfile='/odyssey/scratch/luke/run_michigan/input_mich/river_04056500_2007.bin',
+             '/odyssey/scratch/luke/run_michigan/input_mich/river_04084500_2007.bin',
+             '/odyssey/scratch/luke/run_michigan/input_mich/river_04087000_2007.bin',
+             '/odyssey/scratch/luke/run_michigan/input_mich/river_04101500_2007.bin',
+             '/odyssey/scratch/luke/run_michigan/input_mich/river_04119000_2007.bin',
+             '/odyssey/scratch/luke/run_michigan/input_mich/river_04122500_2007.bin',
+             '/odyssey/scratch/luke/run_michigan/input_mich/river_04066003_2007.bin',
+             '/odyssey/scratch/luke/run_michigan/input_mich/river_04086000_2007.bin',
+             '/odyssey/scratch/luke/run_michigan/input_mich/river_04092750_2007.bin',
+             '/odyssey/scratch/luke/run_michigan/input_mich/river_04108670_2007.bin',
+             '/odyssey/scratch/luke/run_michigan/input_mich/river_04121970_2007.bin',
+
+ rivers_iprec         = 32,
+ rivers_yftype        = 'RS',
+ &

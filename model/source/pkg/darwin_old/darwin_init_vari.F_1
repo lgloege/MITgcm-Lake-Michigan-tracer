@@ -1,0 +1,175 @@
+#include "CPP_OPTIONS.h"
+#include "GCHEM_OPTIONS.h"
+
+#ifdef ALLOW_PTRACERS
+#ifdef ALLOW_DARWIN
+
+c ==========================================================
+c SUBROUTINE INITIALIZE_PLANKTON()
+c initialize stuff for generalized plankton model
+c 
+CMICK        SUBROUTINE INITIALIZE_PLANKTON()
+        SUBROUTINE DARWIN_INIT_VARI(myThid)
+
+        IMPLICIT NONE
+
+#include "SIZE.h"
+#include "GRID.h"
+#include "DYNVARS.h"
+#include "EEPARAMS.h"
+#include "PARAMS.h"
+#include "PLANKTON.h"
+#include "GCHEM.h"
+
+C !INPUT PARAMETERS: ===================================================
+C  myThid               :: thread number
+      INTEGER myThid
+
+CEOP
+
+ 
+        _RL pday
+        _RL GrazeFast
+        _RL GrazeSlow
+        _RL RandNo
+        INTEGER np
+        INTEGER nz
+        INTEGER nrand
+        INTEGER Iseed
+        INTEGER IRand
+
+c test....................
+c       write(6,*)'testing in npzd2fe_init_vari '
+c test....................
+     
+c define 1 day in seconds
+         pday = 86400.0d0
+
+c set up ecosystem coefficients
+c
+c set sinking rates (m/s)... small or big organism?
+         SmallSink = 0.1d0/pday
+         BigSink = 0.5d0/pday
+c set grazing rates .. small or big organism?
+         GrazeFast = 1.0d0/(5.0d0*pday) 
+         GrazeSlow = 1.0d0/(30.0d0*pday) 
+
+c set "allometry" 
+c assume zoo(1) = small, zoo(2) = big 
+c then grazing efficiency according to size
+         zoosize(1) = 0.0d0
+         zoosize(2) = 1.0d0
+
+c DOM remin rates
+         Kdop = 1.0d0/(60.0d0*pday) 
+         Kdon = 1.0d0/(60.0d0*pday) 
+         KdoFe = 1.0d0/(60.0d0*pday) 
+
+c z* = wx_sink/Kremin_X
+c for e-folding length scale, z* = 300 m
+c choose Kremin_X = 1/30 day-1, wx_sink = 10 m day-1
+c Particulate detritus remin rates
+         Kpremin_P = 1.0d0/(30.0d0*pday) 
+         Kpremin_N = Kpremin_P
+         Kpremin_Fe = Kpremin_P
+         Kpremin_Si = 1.0d0/(300.0d0*pday) 
+c sinking rate for particulate matter (m/s)
+         wp_sink = 10.0/pday
+         wn_sink = wp_sink
+         wfe_sink = wp_sink
+         wsi_sink = wp_sink
+
+c seed randomization
+c        Iseed = 25253
+         Iseed = gchem_int1
+         do nrand = 1,Iseed
+           Irand = 0
+           RandNo = rand(Irand)
+         end do
+         print*,'QQ random', Iseed, RandNo
+
+c initialize total number of functional groups tried
+         ngroups = 0
+         do np = 1, npmax
+            call generate_phyto(MyThid, np)
+         end do
+
+c test....................
+c       write(6,*)'npzd2fe_init_vari  1'
+c test....................
+
+c grazing rates according to "allometry"
+         do np=1,npmax
+           do nz=1,nzmax
+             if(zoosize(nz) .eq. physize(np))then
+               graze(np,nz) = GrazeFast 
+             else 
+               graze(np,nz) = GrazeSlow 
+             end if
+           end do
+         end do
+
+c zooplankton mortality
+         mortzoo(1) = 1.0d0/(30.0*pday)
+         mortzoo(2) = 1.0d0/(30.0*pday)
+
+c test....................
+c       write(6,*)'npzd2fe_init_vari  2'
+c test....................
+
+c zooplankton export/mortality       
+c small zooplankton (zoosize = 0.) lower export fraction
+         do nz = 1, nzmax
+           if(zoosize(nz) .eq. 0.0)then 
+             ExportFracZ(nz) = 0.2d0
+           else
+             ExportFracZ(nz) = 0.7d0
+           endif
+         end do
+
+
+c oxidation rates for ammonium and nitrite
+c i.e. Knita ...    NH4 -> NO2
+c i.e. Knitb ...    NO2 -> NO3
+         Knita = 1.0d0/(5.0*pday)
+         Knitb = 1.0d0/(5.0*pday)
+
+c write out initial phyto characteristics
+         open(15,file='plankton-ini-char.dat',status='unknown')
+         open(16,file='plankton_ini_char_nohead.dat',status='unknown')
+         write(15,*)'diat diaz size   mu    Rnp  Rfep   Rsip wsink  KsP 
+     &  KsN   KsFe    KsSi     g1        g2     Kpar  Kinh  Topt  nsrc 
+     & np'
+         do np = 1, npmax
+           write(15,110)diatom(np),diazotroph(np),physize(np),
+     &                   1.0/(mu(np)*86400.),
+     &                   R_NP(np),R_FeP(np)*1000.,R_SiP(np),
+     &                   wsink(np),
+     &                   KsatPO4(np),KsatNO3(np),KsatFeT(np),KsatSi(np),
+     &                   graze(np,1),graze(np,2),
+     &                   KsatPAR(np),Kinhib(np),
+     &                   phytoTempOptimum(np),nsource(np),np
+            write(16,110)diatom(np),diazotroph(np),physize(np),
+     &                   1.0/(mu(np)*86400.),
+     &                   R_NP(np),R_FeP(np)*1000.,R_SiP(np),
+     &                   wsink(np),
+     &                   KsatPO4(np),KsatNO3(np),KsatFeT(np),KsatSi(np),
+     &                   graze(np,1),graze(np,2),
+     &                   KsatPAR(np),Kinhib(np),
+     &                   phytoTempOptimum(np),nsource(np),np
+         end do
+         close(15)
+         close(16)
+ 110     format(3f5.0,f6.2,3f6.0,f6.1,4f7.3,2e10.1,3f6.1,2i5)
+
+
+c test....................
+c       write(6,*)'finishing npzd2fe_init_vari '
+c test....................
+
+         RETURN 
+         END 
+#endif  /*DARWIN*/
+#endif  /*ALLOW_PTRACERS*/
+c ==========================================================
+

@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# $Header: /u/gcmpack/MITgcm/tools/build_options/linux_ia32_lf95,v 1.4 2010/03/21 22:22:52 jmc Exp $
+# $Name:  $
+
+DEFINES='-D_BYTESWAPIO -DWORDLENGTH=4 -DNML_TERMINATOR=" /"'
+CPP='/lib/cpp -traditional -P'
+FC='lf95'
+# FFLAGS='-byteswapio -r8 -Mnodclchk -Mextend'
+# FOPTIM='-tp p6 -v -O2 -Munroll -Mvect=cachesize:512000,transform -Kieee'
+

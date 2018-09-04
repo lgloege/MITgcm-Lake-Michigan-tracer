@@ -1,0 +1,10 @@
+#
+# ***************
+# Open boundaries
+# ***************
+ &KPP_PARM01
+  KPPwriteState   = .FALSE.,
+  Ricr            = 0.3,
+  epsilon         = 0.09,
+  concv           = 1.5,
+ &
