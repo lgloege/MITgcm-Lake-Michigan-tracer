@@ -25,7 +25,11 @@ Serious requests for the input files can be directed to Luke Gloege (gloege at l
 
 ## data
 This directory contains model output and other data analyzed in this project
-- `raw` = raw or unprocesed data. Daily averages of surface phosphorus concentration can be found [here](https://figshare.com/account/home#/projects/37949)
+- `raw` = raw or unprocesed data. Daily averages of surface phosphorus concentration can be found here:
+  * [ptr_tave.0000315360.surf.nc](https://figshare.com/articles/ptr_tave_0000315360_surf_nc/7040042) contains 2007 output
+  * [ptr_tave.0000473040.surf.nc](https://figshare.com/articles/ptr_tave_0000473040_surf_nc/7040048) contains 2008 output
+  * [ptr_tave.0000631152.surf.nc](https://figshare.com/articles/ptr_tave_0000631152_surf_nc/7040051) contains 2009 output
+  * [ptr_tave.0000788832.surf.nc](https://figshare.com/articles/ptr_tave_0000788832_surf_nc/7043378) contains 2010 output
 - `raw/wrtds` = This directory contains daily histories of discharge (Q) in units of cubic meters per second and total phosphorus (TP) in units of mg/L for each river created using the weighted regressions on time, discharge, and season (WRTDS) method (Hirsch et al., 2010).
 - `clean` = processed data. All processing scripts are in the `scripts` directory
 - `shapefiles` = shapefiles used in this project
