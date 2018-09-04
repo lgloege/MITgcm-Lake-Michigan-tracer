@@ -7,9 +7,9 @@
 Serious requests for the 3D model output fields can be directed to Luke Gloege (gloege at ldeo.columbia.edu)
 
 Surface phosphorus fields are available via Figshare:
-* [ptr_tave.0000315360.surf.nc](https://figshare.com/account/home#/projects/37949) contains 2007 output
-* [ptr_tave.0000473040.surf.nc](https://figshare.com/account/home#/projects/37949) contains 2008 output
-* [ptr_tave.0000631152.surf.nc](https://figshare.com/account/home#/projects/37949) contains 2009 output
-* [ptr_tave.0000788832.surf.nc](https://figshare.com/account/home#/projects/37949) contains 2010 output
+* [ptr_tave.0000315360.surf.nc](https://figshare.com/articles/ptr_tave_0000315360_surf_nc/7040042) contains 2007 output
+* [ptr_tave.0000473040.surf.nc](https://figshare.com/articles/ptr_tave_0000473040_surf_nc/7040048) contains 2008 output
+* [ptr_tave.0000631152.surf.nc](https://figshare.com/articles/ptr_tave_0000631152_surf_nc/7040051) contains 2009 output
+* [ptr_tave.0000788832.surf.nc](https://figshare.com/articles/ptr_tave_0000788832_surf_nc/7043378) contains 2010 output
 
 
