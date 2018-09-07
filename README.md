@@ -17,7 +17,7 @@ This directory contains the MITgcm source files, modified code,
 and data to run the MITgcm-Michigan-Phosphorus model.
 The MITgcm source code is continuously being updated and is feely available from the developers. The the most recent source code is available [here](https://github.com/MITgcm/MITgcm). The source code used in MITgcm-Michigan-Phosphorus is contained in `source`.
 
-- `source` = model source code (**~~do not modify these files~~**)
+- `source` = model source code (**~do not modify these files~**)
 - `code` = modifications to source files
 - `inputs` = binary input files for the model
 - `running` = configuration files used to run the model (plus initialization files)
