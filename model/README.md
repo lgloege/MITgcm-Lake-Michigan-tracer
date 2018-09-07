@@ -1,7 +1,7 @@
 ## Model
 This directory contains all the code used to compile and run MITgcm-Michigan-Phosphorus.
 
-- `source` = model source code (**~~do not modify these files~~**)
+- `source` = model source code (**do not modify these files**)
 - `code` = modifications to source files
 - `inputs` = binary input files for the model. A script to download the input files is provide. The script downloads the data from [here](https://google.com).
 - `running` = configuration files used to run the model (plus initialization files)
