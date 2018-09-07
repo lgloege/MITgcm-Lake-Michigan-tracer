@@ -20,4 +20,5 @@ NR>1{PFlux=$2*$3*(1000/1000000); print $1,$2,$3,PFlux}
 
 # DUPLICATE LAST LINE
 # NEEDED FOR LAST TIME STEP OF THE MODEL
+# It is okay to do this because I do not analyze December
 #END{print "2011-01-01",$2,$3,PFlux}
