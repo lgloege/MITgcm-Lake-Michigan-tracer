@@ -8,14 +8,14 @@
 This repository contains a realistic three-dimensional hydrodynamic model of Lake Michigan
 coupled to observed riverine phosphorus inputs. The purpose of the model is
 to assess the redistribution of tributary-derived phosphorus in the lake.
-Phosphorus is input to the lake from 11 tributaries that capture 70% of the annual load ([Rossmann 2006](https://figshare.com)).
+Phosphorus is input to the lake from 11 tributaries that capture 70% of the annual load ([Rossmann 2006](https://www.epa.gov/sites/production/files/2015-08/documents/lmmbp-pcb-report.pdf)).
 
 The quantitative framework is applicable to a wide range of pollutants and waterbodies and can help to guide coastal management efforts.
 
 ## model
 This directory contains the MITgcm source files, modified code,
 and data to run the MITgcm-Michigan-Phosphorus model.
-The MITgcm source code is continuously being updated and is feely available from the developers. The the most recent source code is available [here](https://github.com/MITgcm/MITgcm). The source code used in MITgcm-Michigan-Phosphorus is contained in `source`.
+The MITgcm source code is continuously being updated and is feely available from the developers. The most recent source code is available [here](https://github.com/MITgcm/MITgcm). The source code used in MITgcm-Michigan-Phosphorus is contained in `source`.
 
 - `source` = model source code (**do not modify these files**)
 - `code` = modifications to source files

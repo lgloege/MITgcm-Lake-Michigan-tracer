@@ -4,6 +4,10 @@ This directory contains all the code used to compile and run MITgcm-Michigan-Pho
 - `source` = model source code (**do not modify these files**)
 - `code` = modifications to source files
 - `inputs` = binary input files for the model. A script to download the input files is provide. The script downloads the data from [here](https://google.com).
+    - [inputs for 2007](https://figshare.com/articles/inputs_2007_zip/7064522)
+    - [inputs for 2008](https://figshare.com/articles/inputs_2008_zip/7064768)
+    - [inputs for 2009](https://figshare.com/articles/inputs_2009_zip/7064759)
+    - [inputs for 2010](https://figshare.com/articles/inputs_2010_zip/7064765)
 - `running` = configuration files used to run the model (plus initialization files)
 - `build_MITgcm.bash` = Shell script to compile the model. This creates an executable that you will need to move to to the `running` directory.
 
@@ -18,11 +22,12 @@ The following steps describe how to compile the model
 6. You are now ready to run the simulation!
 
 ## Running the model
-This directory contains the data files used to run the model. `bathy_Lake_Michigan_1min.bin` is a binary bathymetry file.
+This directory contains the data files used to run the model. `bathy_Lake_Michigan_1min.bin` is a binary bathymetry file. The model was spunup using repeating 2007 forcing for two years. Files needed to "pickup" the simulation after spinup are contained in the `pickups` directory. You can pickup the simulation by setting the `startTime` in `running/data`. However, becuase pickup files are not created after each timestep (which would be overkill!) the pickup numbers do not correspond to the model time. The spreadsheet `pickups_to_model_time.xlsx` maps the pickup numbers onto model time (which is in seconds).
 
 1. Make sure you moved the `mitgcmuv` executable from the build directory to `running`.
 2. Change the paths in the data files to correct forcing files stored in the `inputs` directory.
-3. Use `run_1d_MITgcm_habanero.sh` to run the model. You may need to modify this, as it is currently setup to run on the Habanero cluster at Columbia University.
+3. Which year are you running? set the startime and endtime in `data`
+4. Use `run_1d_MITgcm_habanero.sh` to run the model. You may need to modify this, as it is currently setup to run on the Habanero cluster at Columbia University.
 
 ## Sources for the model forcing fields
 Model input sources are provided below:
