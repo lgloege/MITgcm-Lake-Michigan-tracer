@@ -19,16 +19,36 @@ The MITgcm source code is continuously being updated and is feely available from
 
 - `source` = model source code (**do not modify these files**)
 - `code` = modifications to source files
-- `inputs` = binary input files for the model
+- `inputs` = binary input files for the model. I provide a download script.
+    ##### ...or you can download the inputs from the links below
+    * [inputs for 2007](https://figshare.com/articles/inputs_2007_zip/7064522)
+    * [inputs for 2008](https://figshare.com/articles/inputs_2008_zip/7064768)
+    * [inputs for 2009](https://figshare.com/articles/inputs_2009_zip/7064759)
+    * [inputs for 2010](https://figshare.com/articles/inputs_2010_zip/7064765)
 - `running` = configuration files used to run the model (plus initialization files)
 
 ## data
-This directory contains model output and other data analyzed in this project
-- `raw` = raw or unprocesed data. Daily averages of surface phosphorus concentration can be found here:
-  * [ptr_tave.0000315360.surf.nc](https://figshare.com/articles/ptr_tave_0000315360_surf_nc/7040042) contains 2007 output
-  * [ptr_tave.0000473040.surf.nc](https://figshare.com/articles/ptr_tave_0000473040_surf_nc/7040048) contains 2008 output
-  * [ptr_tave.0000631152.surf.nc](https://figshare.com/articles/ptr_tave_0000631152_surf_nc/7040051) contains 2009 output
-  * [ptr_tave.0000788832.surf.nc](https://figshare.com/articles/ptr_tave_0000788832_surf_nc/7043378) contains 2010 output
+This directory contains model output and other data analyzed in this project. Raw model output is downloadable from figshare.
+Some files are compressed to `tar.gz` file. `tar -xzf file_name.tar.gz` will unpack `tar.gz` files.
+- `raw` = raw or unprocesed data.
+    ##### Daily output of surface phosphorus concentration for each river:
+    * [Surface phosphorus output for 2007](https://figshare.com/articles/ptr_tave_0000315360_surf_nc/7040042)
+    * [Surface phosphorus output for 2008](https://figshare.com/articles/ptr_tave_0000473040_surf_nc/7040048)
+    * [Surface phosphorus output for 2009](https://figshare.com/articles/ptr_tave_0000631152_surf_nc/7040051)
+    * [Surface phosphorus output for 2010](https://figshare.com/articles/ptr_tave_0000788832_surf_nc/7043378)
+
+    ##### Daily output of 3D phosphorus concentration for each river ~~each file is 24Gb~~:
+    * [3D phosphorus output for 2007](https://figshare.com/articles/ptr_tave_0000315360_glob_nc_tar_gz/7066520)
+    * [3D phosphorus output for 2008](https://figshare.com/articles/ptr_tave_0000473040_glob_nc_tar_gz/7066538)
+    * [3D phosphorus output for 2009](https://figshare.com/articles/ptr_tave_0000631152_glob_nc_tar_gz/7066553)
+    * [3D phosphorus output for 2010](https://figshare.com/articles/ptr_tave_0000788832_glob_nc_tar_gz/7066571)
+
+    ##### Daily output of 3D temperature and current velocities ~~each file is 14Gb~~:
+    * [3D physical output for 2007](https://figshare.com/articles/tave_0000315360_glob_nc_tar_gz/7066583)
+    * [3D physical output for 2008](https://figshare.com/articles/tave_0000473040_glob_nc_tar_gz/7066586)
+    * [3D physical output for 2009](https://figshare.com/articles/tave_0000631152_glob_nc_tar_gz/7066589)
+    * [3D physical output for 2010](https://figshare.com/articles/tave_0000788832_glob_nc_tar_gz/7066592)
+
 - `raw/wrtds` = This directory contains daily histories of discharge (Q) in units of cubic meters per second and total phosphorus (TP) in units of mg/L for each river created using the weighted regressions on time, discharge, and season (WRTDS) method ([Hirsch et al., 2010](http://onlinelibrary.wiley.com/doi/10.1111/j.1752-1688.2010.00482.x/abstract)).
 - `clean` = processed data. All processing scripts are in the `scripts` directory
 - `shapefiles` = shapefiles used in this project
@@ -50,8 +70,3 @@ and scripts used to create model input files.
 
 ## doc
 This directory contains documentation files.
-
-## References
-Hirsch, R.M., et al.  (2010). Weighted regressions on time, discharge, and season (WRTDS), with an application to Chesapeake Bay river inputs. *JAWRA*, 46(5), 857-880, doi:[10.1111/j.1752-1688.2010.00482.x](http://onlinelibrary.wiley.com/doi/10.1111/j.1752-1688.2010.00482.x/abstract)
-
-Rossmann, R. Results of the Lake Michigan Mass Balance Project: Polychlorinated Biphenyls Modeling Report. USEPA, Large Lakes Research Station, Grosse Ile, MI 621 (2006)

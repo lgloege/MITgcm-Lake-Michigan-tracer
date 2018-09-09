@@ -1,15 +1,15 @@
 ## Results
-
 This directory contains final results from this project
 
 - `figures` = graphics produced from this project
-- `papers` = manuscripts produced from this project
-- `presentation` = talks or posters of presented work
 
-## Presentations
-This directory contains presentations of this work.
+### Presentations
+This work was presented at the Ocean Science Meeting 2018 and
+and the 2018 Society for Freshwater Science annual meeting.
+Slides from these talks can be viewd [here](www.google.com)
 
-- `OSM_feb_2018.pdf` = Slides from talk at Ocean Science Meeting february 2018 in Portland, OR
-- `SFS_may_2018.pdf` = Slides from talk at Society for Freshwater Science annual meeting in Detroit, MI
-
-These presentations contain movies of a dye release simulation, which is viewable [here](https://vimeo.com/214928932)
+### Movies
+[This movie](https://vimeo.com/214928932)) is supplemental to this project.
+Dye was instantaneously released in the model on
+January 1st 2007, April 1st 2007, and August 1st 2007. Each panel is a different simulation.
+The movie demonstrates how thermal bars in Spring and Winter trap constituents near the coast.
