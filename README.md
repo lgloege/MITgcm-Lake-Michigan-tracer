@@ -20,7 +20,7 @@ The MITgcm source code is continuously being updated and is feely available from
 - `source` = model source code (**do not modify these files**)
 - `code` = modifications to source files
 - `inputs` = binary input files for the model. I provide a download script.
-    ##### ...or you can download the inputs from the links below
+    #### ...or you can download the inputs from the links below
     * [inputs for 2007](https://figshare.com/articles/inputs_2007_zip/7064522)
     * [inputs for 2008](https://figshare.com/articles/inputs_2008_zip/7064768)
     * [inputs for 2009](https://figshare.com/articles/inputs_2009_zip/7064759)
@@ -31,19 +31,19 @@ The MITgcm source code is continuously being updated and is feely available from
 This directory contains model output and other data analyzed in this project. Raw model output is downloadable from figshare.
 Some files are compressed to `tar.gz` file. `tar -xzf file_name.tar.gz` will unpack `tar.gz` files.
 - `raw` = raw or unprocesed data.
-    ##### Daily output of surface phosphorus concentration for each river:
+    #### Daily output of surface phosphorus concentration for each river:
     * [Surface phosphorus output for 2007](https://figshare.com/articles/ptr_tave_0000315360_surf_nc/7040042)
     * [Surface phosphorus output for 2008](https://figshare.com/articles/ptr_tave_0000473040_surf_nc/7040048)
     * [Surface phosphorus output for 2009](https://figshare.com/articles/ptr_tave_0000631152_surf_nc/7040051)
     * [Surface phosphorus output for 2010](https://figshare.com/articles/ptr_tave_0000788832_surf_nc/7043378)
 
-    ##### Daily output of 3D phosphorus concentration for each river ~~each file is 24Gb~~:
+    #### Daily output of 3D phosphorus concentration for each river each file is 24Gb:
     * [3D phosphorus output for 2007](https://figshare.com/articles/ptr_tave_0000315360_glob_nc_tar_gz/7066520)
     * [3D phosphorus output for 2008](https://figshare.com/articles/ptr_tave_0000473040_glob_nc_tar_gz/7066538)
     * [3D phosphorus output for 2009](https://figshare.com/articles/ptr_tave_0000631152_glob_nc_tar_gz/7066553)
     * [3D phosphorus output for 2010](https://figshare.com/articles/ptr_tave_0000788832_glob_nc_tar_gz/7066571)
 
-    ##### Daily output of 3D temperature and current velocities ~~each file is 14Gb~~:
+    #### Daily output of 3D temperature and current velocities each file is 14Gb:
     * [3D physical output for 2007](https://figshare.com/articles/tave_0000315360_glob_nc_tar_gz/7066583)
     * [3D physical output for 2008](https://figshare.com/articles/tave_0000473040_glob_nc_tar_gz/7066586)
     * [3D physical output for 2009](https://figshare.com/articles/tave_0000631152_glob_nc_tar_gz/7066589)
