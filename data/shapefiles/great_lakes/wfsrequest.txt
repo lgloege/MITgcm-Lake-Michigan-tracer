@@ -1,1 +1,0 @@
-http://localhost:8080/vector/glin/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=glin:gl_mainlakes&outputFormat=SHAPE-ZIP
