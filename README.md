@@ -25,6 +25,12 @@ The MITgcm source code is continuously being updated and is feely available from
 ## data
 This directory contains model output and other data analyzed in this project
 - `raw` = raw or unprocesed data. Daily averages of surface phosphorus concentration can be found here:
+
+<iframe src="https://widgets.figshare.com/articles/7040042/embed?show_title=1"  width="210" height="100" frameborder="0"></iframe>
+<iframe src="https://widgets.figshare.com/articles/7040048/embed?show_title=1"  width="210" height="100" frameborder="0"></iframe>
+<iframe src="https://widgets.figshare.com/articles/7040051/embed?show_title=1"  width="210" height="100" frameborder="0"></iframe>
+<iframe src="https://widgets.figshare.com/articles/7043378/embed?show_title=1"  width="210" height="100" frameborder="0"></iframe>
+
   * [ptr_tave.0000315360.surf.nc](https://figshare.com/articles/ptr_tave_0000315360_surf_nc/7040042) contains 2007 output
   * [ptr_tave.0000473040.surf.nc](https://figshare.com/articles/ptr_tave_0000473040_surf_nc/7040048) contains 2008 output
   * [ptr_tave.0000631152.surf.nc](https://figshare.com/articles/ptr_tave_0000631152_surf_nc/7040051) contains 2009 output
