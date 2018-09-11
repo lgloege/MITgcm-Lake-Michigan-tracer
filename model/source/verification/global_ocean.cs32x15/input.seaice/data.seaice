@@ -1,0 +1,23 @@
+# SEAICE parameters
+ &SEAICE_PARM01
+ LSR_ERROR             = 1.E-12,
+#SEAICE_deltaTevp = 60.,
+#SEAICEuseDynamics = .FALSE.,
+ SEAICE_clipVelocities = .TRUE.,
+#
+ SEAICE_salt0          = 4.,
+ SEAICEadvHeff         = .TRUE.,
+ SEAICEadvArea         = .TRUE.,
+ SEAICEadvSnow         = .TRUE.,
+ SEAICEadvScheme       = 77,
+ SEAICE_multDim        = 7,
+ SEAICE_wetAlbTemp     = 0.,
+ SEAICE_mcPheePiston   = 0.00057,
+ SEAICE_areaLossFormula= 2,
+ SEAICEheatConsFix     = .TRUE.,
+#SEAICE_monFreq        = 2592000.,
+#SEAICEwriteState      = .TRUE.,
+ &
+
+ &SEAICE_PARM03
+ &

@@ -1,0 +1,16 @@
+/.cvsignore/1.11/Fri Aug 31 00:15:54 2007//
+/README/1.17/Tue Jan 29 11:25:54 2008//
+D/build////
+D/code////
+D/code_ad////
+D/input////
+D/input.fd////
+D/input.hb87////
+D/input.salt_plume////
+D/input_ad////
+D/input_ad.evp////
+D/input_ad.noseaice////
+D/input_ad.noseaicedyn////
+D/matlab////
+D/results////
+D/run////

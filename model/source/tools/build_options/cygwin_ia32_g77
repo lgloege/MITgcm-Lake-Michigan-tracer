@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+#  $Header: /u/gcmpack/MITgcm/tools/build_options/cygwin_ia32_g77,v 1.2 2004/09/21 19:51:10 edhill Exp $
+#  $Name:  $
+#
+
+
+FC=g77
+DEFINES='-D_BYTESWAPIO -DWORDLENGTH=4'
+CPP='cpp  -traditional -P'
+NOOPTFLAGS='-O0'
+
+#  For IEEE, use the "-ffloat-store" option
+if test "x$IEEE" = x ; then
+    FFLAGS='-Wimplicit -Wunused -Wuninitialized'
+    FOPTIM='-O3 -malign-double -funroll-loops'
+else
+    FFLAGS='-Wimplicit -Wunused -ffloat-store'
+    FOPTIM='-O0 -malign-double'
+fi
+
+
+

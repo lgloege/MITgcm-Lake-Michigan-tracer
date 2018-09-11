@@ -1,0 +1,16 @@
+obcs_apply_eta.f
+obcs_apply_sloc.f
+obcs_apply_tloc.f
+obcs_apply_ts.f	
+obcs_apply_uv.f	
+obcs_apply_w.f
+obcs_calc.f	
+obcs_init_variables.f
+obcs_prescribe_exchanges.f
+obcs_prescribe_read.f
+obcs_sponge.f	
+orlanski_east.f
+orlanski_north.f
+orlanski_south.f
+orlanski_west.f
+orlanski_init.f

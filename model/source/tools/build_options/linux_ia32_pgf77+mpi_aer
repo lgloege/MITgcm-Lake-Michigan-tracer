@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+#  $Header: /u/gcmpack/MITgcm/tools/build_options/linux_ia32_pgf77+mpi_aer,v 1.4 2005/01/31 19:30:14 ce107 Exp $
+#
+
+
+FC='/opt/mpich/bin/mpif77'
+CC='/opt/mpich/bin/mpicc'
+LINK='/opt/mpich/bin/mpif77'
+DEFINES='-DALLOW_USE_MPI -DALWAYS_USE_MPI -DWORDLENGTH=4'
+CPP='cpp  -traditional -P'
+
+if test "x$IEEE" = x ; then
+    #  No need for IEEE-754
+    FFLAGS='-byteswapio -r8 -Mnodclchk -Mextend'
+    FOPTIM='-fastsse -Mvect=cachesize:524288,transform'
+else
+    #  Try to follow IEEE-754
+    FFLAGS='-byteswapio -r8 -Mnodclchk -Mextend'
+    FOPTIM='-O0 -Mvect=sse -Mscalarsse -Mcache_align -Mnoflushz -Kieee'
+fi
+
+INCLUDES='-I/opt/mpich/include'
+LIBS='-L/opt/mpich/lib/ -lfmpich -lmpich'

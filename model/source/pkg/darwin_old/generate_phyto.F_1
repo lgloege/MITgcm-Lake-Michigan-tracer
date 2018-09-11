@@ -1,0 +1,251 @@
+#include "CPP_OPTIONS.h"
+#include "PTRACERS_OPTIONS.h"
+#include "GCHEM_OPTIONS.h"
+
+#ifdef ALLOW_PTRACERS
+#ifdef ALLOW_DARWIN
+
+c ==========================================================
+c SUBROUTINE GENERATE_PHYTO
+c generate parameters for "functional group" of phyto (index np)
+c using a "Monte Carlo" approach
+c Mick Follows, Stephanie Dutkiewicz Dec 04
+c ==========================================================
+        SUBROUTINE GENERATE_PHYTO(myThid, np)
+
+        implicit none
+cmick   include "PLANKTON.h"
+#include "PLANKTON.h"
+
+C !INPUT PARAMETERS: ===================================================
+C  myThid               :: thread number
+      INTEGER myThid
+CEOP
+
+
+c local variables
+        _RL RandNo
+        _RL growthdays
+        _RL pday
+        _RL year
+        _RL month
+        _RL fiveday
+        _RL GrazeFast
+        _RL GrazeSlow
+c       _RL BigSink
+c       _RL SmallSink
+        _RL rtime
+        INTEGER np
+        INTEGER nz
+        INTEGER Irand
+        INTEGER signvar
+
+c length of day (seconds)
+        pday = 86400.0d0
+
+c each time generate another functional group add one to ngroups
+        ngroups = ngroups + 1
+
+c RANDOM NUMBERS
+c
+c phyto either diatoms (diatom=1.0) and use silica or not (diatom=0.0)
+c at this point totally random 
+        Irand = 0
+        RandNo = rand(Irand)
+        if(RandNo .gt. 0.500d0)then
+          diatom(np) = 1.0d0
+        else
+          diatom(np) = 0.0d0
+        end if
+c TEST ...........................................
+c        diatom(np) = 0.0d0
+c        write(6,*)'FIXED - no DIATOM '
+c TEST ...........................................
+
+
+
+c phyto either diazotrophs (diazotroph=1.0) or not (diazotroph=0.0)
+        Irand = 0
+        RandNo = rand(Irand)
+        if(RandNo .gt. 0.500d0)then
+          diazotroph(np) = 1.0d0
+        else
+          diazotroph(np) = 0.0d0
+        end if
+c TEST ...........................................
+        diazotroph(np) = 0.0d0
+        write(6,*)'FIXED - no DIAZO '
+c TEST ...........................................
+
+
+c phyto either "small" (physize(np)=0.0) or "big" (physize(np)=1.0)
+c at this point independent of whether diatom or not
+        Irand = 0
+        RandNo = rand(Irand)
+        if(RandNo .gt. 0.500d0)then
+          physize(np) = 1.0d0
+        else
+          physize(np) = 0.0d0
+        end if
+
+c TEST ...........................................
+c        physize(np) = 0.0d0
+c        write(6,*)'FIXED - ONLY SMALL PLANKTON '
+c TEST ...........................................
+
+
+c diatoms must be big
+        if(diatom(np) .eq. 1.0)physize(np) = 1.0d0
+c growth rates
+        Irand = 0
+        RandNo = rand(Irand)
+c big/small phyto growth rates..Currently growthrate indep of size  
+        if(physize(np) .eq. 1.0d0)then
+          growthdays = 1.0d0 + RandNo*0.5
+        else
+          growthdays = 1.0d0 + RandNo*0.5
+        end if
+c but diazotrophs always slower due to energetics
+        if(diazotroph(np) .eq. 1.0)growthdays = 1.6d0 + RandNo*0.5
+c now convert to a growth rate
+        mu(np) = 1.0d0/(growthdays*pday)
+
+c preferred nitrogen source...
+c New Way of Doing it Everyones preference is for NH4
+c And their second choice can be nsource = 1 for NO3 or, 2 for NO2 
+c        if(diazotroph(np) .ne. 1.0)then
+c         Irand = 0
+c         RandNo = rand(Irand)
+c         if(RandNo .lt. 0.5d0)then
+c           nsource(np) = 1
+c         else
+c           nsource(np) = 2
+c         endif
+c        end if  
+
+
+c All prefer NH4
+c Second choice: nsource = 1,  NO3 
+c                nsource = 2 for NO2 
+c                nsource = 3 no second choice, NH4 only
+         if(diazotroph(np) .ne. 1.0)then
+           Irand = 0
+           RandNo = rand(Irand)
+           if(RandNo .gt. 0.670d0)then
+             nsource(np) = 1
+           elseif(RandNo .lt. 0.33d0)then
+             nsource(np) = 2
+           else
+             nsource(np) = 3
+           endif 
+         end if 
+
+c..OLd Way of doing it
+c nsource = 1 for NO3,  2 for NO2,  3 for NH4
+c        if(diazotroph(np) .ne. 1.0)then
+c          Irand = 0
+c          RandNo = rand(Irand)
+c          if(RandNo .gt. 0.670d0)then
+c            nsource(np) = 1
+c          elseif(RandNo .lt. 0.33d0)then
+c            nsource(np) = 2
+c            nsource(np) = 1 
+c          else
+c            nsource(np) = 3
+c            nsource(np) = 1
+c          endif 
+c        end if 
+
+
+c..........................................................
+c generate phyto Temperature Function parameters  Changed by Scott
+c.......................................................
+        
+        Irand = 0
+        RandNo = rand(Irand)
+        
+        phytoTempCoeff(np) = 1.0d0
+        phytoTempExp1(np) = 0.063d0 
+        phytoTempExp2(np) = 0.002d0  
+c        phytoTempExp2(np) = 0.0002d0  
+        Irand = 0
+        RandNo = rand(Irand)
+cswd    phytoTempOptimum(np) = 30.0d0 - RandNo*28.0d0 
+        phytoTempOptimum(np) = 32.0d0 - RandNo*30.0d0
+        phytoDecayPower(np) = 3.0d0 
+        
+        write(6,*)'generate Phyto: np = ',np,' Topt =',
+     &    phytoTempOptimum(np)
+
+
+c ...............................................
+        write(6,*)'generate phyto: np = ',np,' growthdays = ',growthdays
+c ...............................................
+
+c stoichiometric ratios for each functional group of phyto 
+c relative to phosphorus  - the base currency nutrient
+c set Si:P
+        if(diatom(np) .eq. 1.0)then
+          R_SiP(np) = 16.0d0
+        else
+          R_SiP(np) = 0.0d0
+        end if
+c set N:P and iron requirement according to diazotroph status
+        if(diazotroph(np) .eq. 1.0)then
+          R_NP(np) = 40.0d0
+          R_FeP(np) = 7.5d-3 
+        else
+          R_NP(np) = 16.0d0
+          R_FeP(np) = 2.5d-3
+        end if
+c set sinking rates according to allometry
+        if(physize(np) .eq. 1.0)then
+           wsink(np) = BigSink
+        else 
+           wsink(np) = SmallSink
+        end if 
+c half-saturation coeffs 
+
+        Irand = 0
+        RandNo = rand(Irand)
+        ksatPO4(np) = 0.015d0 + RandNo*0.01
+        ksatNO3(np) = ksatPO4(np)*R_NP(np)
+        ksatNO2(np) = ksatNO3(np)
+c Made ksatNH4 smaller since it is the prefered source
+        ksatNH4(np) = ksatNO3(np)*0.5d0
+        ksatFeT(np) = ksatPO4(np)*R_FeP(np)
+        ksatSi(np)  = 2.0
+
+
+c light sensitivity stuff - size/class related
+c cyanobact have low half sats for growth and photo-inhib
+c diatoms/others have high half sat for growth and photo-inhib
+
+              Irand = 0
+              RandNo = rand(Irand)
+              if(physize(np) .eq. 1.0d0)then
+              ksatPAR(np) = 10.0d0 + RandNo*5.0d0
+              kinhib(np) = ksatPAR(np) + 100.0d0
+              else
+              ksatPAR(np) = 0.1d0 + RandNo*3.0d0
+c             kinhib(np) = ksatPAR(np) + 3.0d0
+              kinhib(np) = ksatPAR(np) + (5.0*ksatPAR(np))
+              end if
+
+
+c grazing rates according to "allometry"
+c big grazers preferentially eat big phyto etc...
+        do nz=1,nzmax
+          if(zoosize(nz) .eq. physize(np))then
+            graze(np,nz) = GrazeFast 
+          else 
+            graze(np,nz) = GrazeSlow 
+          end if
+        end do
+
+        RETURN
+        END
+#endif  /*DARWIN*/
+#endif  /*ALLOW_PTRACERS*/
+
+c ===========================================================

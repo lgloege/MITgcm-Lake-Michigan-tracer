@@ -1,0 +1,13 @@
+/FFTPACK.h/1.4/Thu Oct  9 04:19:20 2003//
+/ZONAL_FILT.h/1.4/Tue Dec 11 14:47:32 2001//
+/ZONAL_FILT_OPTIONS.h/1.4/Thu Oct  9 04:19:20 2003//
+/fftpack.F/1.7/Wed Dec 24 00:27:53 2003//
+/zonal_filt_apply_ts.F/1.1/Tue Dec 11 14:49:07 2001//
+/zonal_filt_apply_uv.F/1.1/Tue Dec 11 14:49:07 2001//
+/zonal_filt_init.F/1.5/Tue Dec 11 14:50:14 2001//
+/zonal_filt_nofill.F/1.4/Tue Apr 10 22:35:27 2001//
+/zonal_filt_postsmooth.F/1.3/Sun Feb  4 14:38:51 2001//
+/zonal_filt_presmooth.F/1.4/Tue Apr 10 22:35:27 2001//
+/zonal_filt_readparms.F/1.2/Wed Jul 31 21:02:06 2002//
+/zonal_filter.F/1.5/Tue Dec 11 14:50:14 2001//
+D
