@@ -3,14 +3,14 @@
 # External Forcing Data
 # *********************
  &EXF_NML
-####### Air temp 
+####### Air temp
 ## YYYY:MT:DD
  atempstartdate1=20070101,
 ## HH:MM:SS
  atempstartdate2=000000,
  atempperiod=10800.,
 
-####### Specific humidity 
+####### Specific humidity
 ## YYYY:MT:DD
  aqhstartdate1=20070101,
 ## HH:MM:SS
@@ -18,9 +18,9 @@
  aqhperiod=10800.,
 
 ############ For downward longwave (>0 ocean warming)
-### YYYY:MT:DD 
+### YYYY:MT:DD
  lwdownstartdate1=20070101,
-## HH:MM:SS 
+## HH:MM:SS
  lwdownstartdate2=000000,
  lwdownperiod=10800.,
 ##hflux_lon0    = 2
@@ -31,8 +31,8 @@
 ##hflux_nlat    = 40
 #
 
-############ For downward shortwave (>0 water warming) 
-## YYYY:MT:DD 
+############ For downward shortwave (>0 water warming)
+### YYYY:MT:DD
  swdownstartdate1=20070101,
 ## HH:MM:SS
  swdownstartdate2=000000,
@@ -66,12 +66,12 @@
 #
 #
 ## input files
- lwdownfile = '../input_mich/xy.longwave.narr.new.2007.1min.bin',
- swdownfile = '../input_mich/xy.shortwave.narr.new.2007.1min.bin',
- uwindfile  = '../input_mich/xy.uwind.narr.new.2007.1min.bin',
- vwindfile  = '../input_mich/xy.vwind.narr.new.2007.1min.bin',
- atempfile  = '../input_mich/xy.temp.10m.narr.new.2007.1min.bin',
- aqhfile    = '../input_mich/xy.shumid.narr.new.2007.1min.bin',
+ lwdownfile = '../inputs/xy.longwave.narr.new.2007.1min.bin',
+ swdownfile = '../inputs/xy.shortwave.narr.new.2007.1min.bin',
+ uwindfile  = '../inputs/xy.uwind.narr.new.2007.1min.bin',
+ vwindfile  = '../inputs/xy.vwind.narr.new.2007.1min.bin',
+ atempfile  = '../inputs/xy.temp.10m.narr.new.2007.1min.bin',
+ aqhfile    = '../inputs/xy.shumid.narr.new.2007.1min.bin',
 
  exf_iprec         = 32,
  exf_yftype        = 'RS',

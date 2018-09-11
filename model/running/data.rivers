@@ -13,17 +13,17 @@
 
 ############## flow should have units of:
 ## input files
- rivflowfile='../input_mich/river_04056500_2007.bin',
-             '../input_mich/river_04084500_2007.bin',
-             '../input_mich/river_04087000_2007.bin',
-             '../input_mich/river_04101500_2007.bin',
-             '../input_mich/river_04119000_2007.bin',
-             '../input_mich/river_04122500_2007.bin',
-             '../input_mich/river_04066003_2007.bin',
-             '../input_mich/river_04086000_2007.bin',
-             '../input_mich/river_04092750_2007.bin',
-             '../input_mich/river_04108670_2007.bin',
-             '../input_mich/river_04121970_2007.bin',
+ rivflowfile='../inputs/Fox_mgs_2007.bin',
+             '../inputs/Menominee_mgs_2007.bin',
+             '../inputs/Manistique_mgs_2007.bin',
+             '../inputs/Manistee_mgs_2007.bin',
+             '../inputs/PereMarquette_mgs_2007.bin',
+             '../inputs/Muskegon_mgs_2007.bin',
+             '../inputs/Grand_mgs_2007.bin',
+             '../inputs/Kalamazoo_mgs_2007.bin',
+             '../inputs/StJoseph_mgs_2007.bin',
+             '../inputs/Milwaukee_mgs_2007.bin',
+             '../inputs/Sheboygan_mgs_2007.bin',
 
  rivers_iprec         = 32,
  rivers_yftype        = 'RS',

@@ -19,7 +19,7 @@
 
 ## input files
 ## 4 years files uses .kronos.
- icefracfile = '../input_mich/icef.2007.1min.bin',
+ icefracfile = '../inputs/icef.2007.1min.bin',
 # icelatentfile = '/ptmp/benesh/10km_forcing/s2001_iceLHF_0.25m_Lake_Superior_r4.bin',
 
  lakeice_iprec         = 32,

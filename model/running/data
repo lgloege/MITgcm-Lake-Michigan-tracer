@@ -71,12 +71,12 @@
 # Time stepping parameters
  &PARM03
 # running for one year
-# startTime=0.,
-# startTime=31536000.,
- startTime=63072000.
+ #startTime=0.,
+ startTime=31536000.,
+# startTime=63072000.
 # endTime=31536000.,
-# endTime=63072000.,
- endTime=94608000.,
+ endTime=63072000.,
+# endTime=94608000.,
 # endTime=126230400.,
  deltaTmom=200.,
 #tauCD =     321428.,
