@@ -19,7 +19,7 @@ INPUTS_2007='https://ndownloader.figshare.com/files/12993452'
 INPUTS_2008='https://ndownloader.figshare.com/files/12993587'
 INPUTS_2009='https://ndownloader.figshare.com/files/12993596'
 INPUTS_2010='https://ndownloader.figshare.com/files/12993620'
-PICKUPS_2007_2010='https://ndownloader.figshare.com/files/???????'
+PICKUPS_2007_2010='https://ndownloader.figshare.com/files/13004819'
 
 ### ===================================================================
 ### Pickups
