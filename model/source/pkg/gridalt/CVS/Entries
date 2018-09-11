@@ -1,9 +1,0 @@
-/GRIDALT_OPTIONS.h/1.1/Mon May 23 20:51:09 2005//
-/dyn2phys.F/1.4/Wed May  5 00:39:21 2004//
-/gridalt_diagnostics_init.F/1.2/Mon May 23 21:25:24 2005//
-/gridalt_initialise.F/1.6/Mon May 23 20:51:09 2005//
-/gridalt_mapping.h/1.6/Wed Aug  4 22:30:52 2004//
-/gridalt_update.F/1.9/Thu Jul  7 23:18:51 2005//
-/make_phys_grid.F/1.5/Tue Nov  2 00:54:51 2004//
-/phys2dyn.F/1.6/Wed May  5 00:39:21 2004//
-D
