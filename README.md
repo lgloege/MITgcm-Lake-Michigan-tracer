@@ -12,6 +12,10 @@ Phosphorus is input to the lake from 11 tributaries that capture 70% of the annu
 
 The quantitative framework is applicable to a wide range of pollutants and waterbodies and can help to guide coastal management efforts.
 
+[doi.org/10.6084/m9.figshare.c.4222538.v1](https://doi.org/10.6084/m9.figshare.c.4222538.v1) contains a collection of input files to force MITgcm-Michigan-Phosphorus and output from the simulation.
+
+If you have any questions or concerns, please either open up an issue in this repository or contact Luke directly (gloege at ldeo.columbia.edu).
+
 ## model
 This directory contains the MITgcm source files, modified code,
 and data to run the MITgcm-Michigan-Phosphorus model.
@@ -19,13 +23,13 @@ The MITgcm source code is continuously being updated and is feely available from
 
 - `source` = model source code (**do not modify these files**)
 - `code` = modifications to source files
-- `inputs` = binary input files for the model. I provide a download script.
+- `running` = configuration files used to run the model (plus initialization files)
+- `setup_model_environment.sh` = downloads inputs and pickup files.
     #### ...or you can download the inputs from the links below
     * [inputs for 2007](https://figshare.com/articles/inputs_2007_zip/7064522)
     * [inputs for 2008](https://figshare.com/articles/inputs_2008_zip/7064768)
     * [inputs for 2009](https://figshare.com/articles/inputs_2009_zip/7064759)
     * [inputs for 2010](https://figshare.com/articles/inputs_2010_zip/7064765)
-- `running` = configuration files used to run the model (plus initialization files)
 
 ## data
 This directory contains model output and other data analyzed in this project. Raw model output is downloadable from figshare.
