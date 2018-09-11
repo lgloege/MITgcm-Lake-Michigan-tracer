@@ -35,7 +35,7 @@ rm $(basename ${PICKUPS_2007_2010})
 ### ===================================================================
 if [ -d inputs ]  ; then rm -Rf inputs ; fi
 if [ ! -d inputs ] ; then mkdir inputs ; fi
-cd inputs
+cd ./inputs
 
 #### Gets inputs for 2007
 wget ${INPUTS_2007}
