@@ -5,7 +5,7 @@ This directory contains all the code used to compile and run MITgcm-Michigan-Pho
 - `code` = modifications to source files
 - `running` = configuration files used to run the model (plus initialization files)
 - `setup_model_environment.sh` = Shell script to download that downloads input files and pickup files
-- `build_MITgcm.bash` = Shell script to compile the model. This creates an executable that you will need to move to to the `running` directory.
+- `build_MITgcm.sh` = Shell script to compile the model. This creates an executable that you will need to move to to the `running` directory.
 
 
 code  running  source  README.md  build_MITgcm.bash  setup_model_environment.sh
