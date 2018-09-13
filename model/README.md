@@ -7,25 +7,22 @@ This directory contains all the code used to compile and run MITgcm-Michigan-Pho
 - `setup_model_environment.sh` = Shell script to download that downloads input files and pickup files
 - `build_MITgcm.sh` = Shell script to compile the model. This creates an executable that you will need to move to to the `running` directory.
 
-
-code  running  source  README.md  build_MITgcm.bash  setup_model_environment.sh
-
 ## Setting up the model environment
-The `setup_model_environment.sh` script creates two new directories `inputs` and `pickups`. Run this command:
+The `setup_model_environment.sh` script creates two directories `inputs` and `pickups` that store the binary input files and simulation pickup files:
 ```bash
 ./setup_model_environment.sh
 ```
 
-The script uses the `wget` command to download the files. Don't have `wget` installed? No problem. If you are a mac users I highly recommend installing the [homebrew](https://brew.sh) package manager. This makes installing `wget` as simple as:
+Files are downloads via `wget`. Don't have `wget` installed? No problem. If you are a mac user I highly recommend installing the [homebrew](https://brew.sh) package manager. This makes installing `wget` as easy as:
 ```bash
 brew install wget
 ```
 
 You can also follow the links below and manually download the pickup and input files.
-Extract the files with `tar -xvzf file_name.tar.gz`.
+Extract the files using `tar -xvzf file_name.tar.gz`.
 
 - `pickups` = model pickup files. The script downloads the following pickup files:
-    - [pickup files](https://figshare.com/articles/inputs_2007_zip/????)
+    - [pickup files](https://figshare.com/articles/pickups_tar_gz/7073000)
 - `inputs` = binary input files for the model. The script downloads the following inputs:
     - [inputs for 2007](https://figshare.com/articles/inputs_2007_zip/7064522)
     - [inputs for 2008](https://figshare.com/articles/inputs_2008_zip/7064768)
@@ -35,18 +32,17 @@ Extract the files with `tar -xvzf file_name.tar.gz`.
 ## Compile
 The following steps describe how to compile the model
 
-1. Make sure path to `source` directory is set properly in `build_MITgcm.bash`
-2. Make sure path to `code` directory is set properly in `build_MITgcm.bash`
-3. Set the path to your machine's build option file (i.e. optfile) in `build_MITgcm.bash`. MITgcm provides in common optfiles here `source/tools/build_options/`
-4. The following command creates a `build` directory where the model is compiled:
+1. Make sure path to `source` and `code` directory are set properly in `build_MITgcm.bash` and set the path to your machine's build option file (i.e. optfile). MITgcm provides in common optfiles here `source/tools/build_options/`
+2. Build and compile the model:
 ```bash
 ./build_MITgcm.bash
 ```
-5. If the model compiled properly, there is now an executable named `mitgcmuv` in `build`. Move this execuatble to `running`:
+You will see a new directory named `build` is created
+3. If the model compiled properly, there is now an executable named `mitgcmuv` in `build`. Move this execuatble to `running`:
 ```bash
 mv ./build/mitgcmuv ./running/
 ```
-6. Now you are ready to run the model! See the Running the model section.
+4. Now you are ready to run the model! See the Running the model section.
 
 ## Running the model
 This directory contains the data files used to run the model. `bathy_Lake_Michigan_1min.bin` is a binary bathymetry file. The model was spunup using repeating 2007 forcing for two years. Files needed to "pickup" the simulation after spinup are contained in the `pickups` directory. You can pickup the simulation by setting the `startTime` in `running/data`. However, becuase pickup files are not created after each timestep (which would be overkill!) the pickup numbers do not correspond to the model time. The spreadsheet `pickups_to_model_time.xlsx` maps the pickup numbers onto model time (which is in seconds).
@@ -194,6 +190,3 @@ For example, let's say you want to start the simulation in 2007.
     - `data.exf`
     - `data.lakeice`
     - `data.rivers`
-
-
-
