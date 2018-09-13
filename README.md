@@ -1,7 +1,7 @@
 <h1 align="center"> MITgcm-Michigan-Phosphorus </h1>
 
 <p align="center">
-   <img height="400" src="https://github.com/lgloege/MITgcm-Michigan-Phosphorus/blob/master/results/figures_clean/Figure_1.png">
+   <img height="400" src="https://github.com/lgloege/MITgcm-Michigan-Phosphorus/blob/master/results/figures_clean/Figure_1.jpg">
 </p>
 
 
