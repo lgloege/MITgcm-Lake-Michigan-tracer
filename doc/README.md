@@ -1,8 +1,11 @@
 ## Doc
-These are ducmentation files, such as references.
+These are ducmentation files.
 
+## Helvetica
+Helvetica is a nice clean font, but is not included in [matplotlib](https://matplotlib.org).
+Instructions on how to use helvetica in matplotlib are [here](https://github.com/olgabot/sciencemeetproductivity.tumblr.com/blob/master/posts/2012/11/how-to-set-helvetica-as-the-default-sans-serif-font-in.md).
 
-### References.bib contains these references
+### References used in this study
 
 1. Vaccaro, L., and Read, J. Vital to our nation's economy: Great Lakes jobs 2011 report.
 Michigan Sea Grant (2011).
@@ -170,6 +173,3 @@ http://www.naturalcapitalproject.org/InVEST.html. Accessed October 2013
 47. Wood, S. A., Guerry, A. D., Silver, J. M. and Lacayo M. Using social media to quantify
 nature-based tourism and recreation. Sci Rep-Uk 3. (2013)
 
-## Helvetica
-Helvetica is a nice clean font, but is not included in [matplotlib](https://matplotlib.org).
-Instructions on how to use helvetica in matplotlib are [here](https://github.com/olgabot/sciencemeetproductivity.tumblr.com/blob/master/posts/2012/11/how-to-set-helvetica-as-the-default-sans-serif-font-in.md).

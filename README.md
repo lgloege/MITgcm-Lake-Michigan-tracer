@@ -41,13 +41,13 @@ Some files are compressed to `tar.gz` file. `tar -xzf file_name.tar.gz` will unp
     * [Surface phosphorus output for 2009](https://figshare.com/articles/ptr_tave_0000631152_surf_nc/7040051)
     * [Surface phosphorus output for 2010](https://figshare.com/articles/ptr_tave_0000788832_surf_nc/7043378)
 
-    #### Daily output of 3D phosphorus concentration for each river each file is 24Gb:
+    #### Daily output of 3D phosphorus concentration for each river (each file is 24Gb):
     * [3D phosphorus output for 2007](https://figshare.com/articles/ptr_tave_0000315360_glob_nc_tar_gz/7066520)
     * [3D phosphorus output for 2008](https://figshare.com/articles/ptr_tave_0000473040_glob_nc_tar_gz/7066538)
     * [3D phosphorus output for 2009](https://figshare.com/articles/ptr_tave_0000631152_glob_nc_tar_gz/7066553)
     * [3D phosphorus output for 2010](https://figshare.com/articles/ptr_tave_0000788832_glob_nc_tar_gz/7066571)
 
-    #### Daily output of 3D temperature and current velocities each file is 14Gb:
+    #### Daily output of 3D temperature and current velocities (each file is 14Gb):
     * [3D physical output for 2007](https://figshare.com/articles/tave_0000315360_glob_nc_tar_gz/7066583)
     * [3D physical output for 2008](https://figshare.com/articles/tave_0000473040_glob_nc_tar_gz/7066586)
     * [3D physical output for 2009](https://figshare.com/articles/tave_0000631152_glob_nc_tar_gz/7066589)

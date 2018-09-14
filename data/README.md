@@ -44,12 +44,15 @@ Thid data is visualized in Supplemental Figure 7.
 
 ## Shapefiles
 This contains shapefiles used in this project. These are only used for display purpose in Figure 1.
-- `glwsheds` - shapefile of Great Lakes HUC 08 sub-basin boundaries. I can not remember how I acquired this. For those interested, the [Watershed Boundary Dataset](https://nhd.usgs.gov/wbd.html) is a good place to start.
+- `glwsheds` - shapefile of Great Lakes HUC 08 sub-basin boundaries. I can not remember how I acquired this specific dataset.
+However, this data should be contained in the [Watershed Boundary Dataset](https://nhd.usgs.gov/wbd.html).
 
-These were not used in this stuyd, but some may find them useful:
+These were not used in this study, but I don't want to forget these links:
 - shapefile of the Great Lakes is available [here](http://archive.lib.msu.edu/maps/temp/Patron_Projects/Marquette_StudyArea/Shapefiles/)
 - shapefiles of each Great Lake and its watershed are available [here](https://www.sciencebase.gov/catalog/item/530f8a0ee4b0e7e46bd300dd)
 
 ## Data Clean
 This directory contains processed data. The `scripts` directory contains the code used to process all the raw data.
+Some of the processed data is too large to store here. All the raw data is available and the processing scripts are available
+to re-generate these files.
 
