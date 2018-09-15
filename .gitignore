@@ -2,6 +2,8 @@
 **/scratch
 **/.ipynb_checkpoints
 
+**/manuscript
+
 **/not_used
 **/watershed
 **/great_lakes
@@ -11,7 +13,6 @@
 **/lake_michigan
 **/rivers
 **/states
-
 **/output_3D
 **/river_inputs
 phosphorus_avg_MJJA.nc
