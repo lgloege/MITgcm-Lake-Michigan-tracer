@@ -4,7 +4,6 @@
    <img height="400" src="https://github.com/lgloege/MITgcm-Michigan-Phosphorus/blob/master/results/figures_jpg/Figure_1.jpg">
 </p>
 
-
 This repository contains a realistic three-dimensional hydrodynamic model of Lake Michigan
 coupled to observed riverine phosphorus inputs. The purpose of the model is
 to assess the redistribution of tributary-derived phosphorus in the lake.
