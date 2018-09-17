@@ -53,6 +53,9 @@ Some files are compressed to `tar.gz` file. `tar -xzf file_name.tar.gz` will unp
     * [3D physical output for 2010](https://figshare.com/articles/tave_0000788832_glob_nc_tar_gz/7066592)
 
 - `raw/wrtds` = This directory contains daily histories of discharge (Q) in units of cubic meters per second and total phosphorus (TP) in units of mg/L for each river created using the weighted regressions on time, discharge, and season (WRTDS) method ([Hirsch et al., 2010](http://onlinelibrary.wiley.com/doi/10.1111/j.1752-1688.2010.00482.x/abstract)).
+
+- `raw/ES_2km_maps` = This directory contains ecosystem service shape-files on a 2km grid. These maps were created from the ecosystem service maps described in [Allan et al. 2015](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/140328)
+
 - `clean` = processed data. All processing scripts are in the `scripts` directory
 - `shapefiles` = shapefiles used in this project
 
