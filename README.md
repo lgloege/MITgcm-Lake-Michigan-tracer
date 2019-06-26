@@ -1,13 +1,13 @@
-<h1 align="center"> MITgcm-Michigan-Phosphorus </h1>
+<h1 align="center"> MITgcm-Lake-Michigan-tracer </h1>
 
 <p align="center">
-   <img height="400" src="https://github.com/lgloege/MITgcm-Michigan-Phosphorus/blob/master/results/figures_jpg/Figure_1.jpg">
+   <img height="400" src="https://github.com/lgloege/MITgcm-Lake-Michigan-tracer/blob/master/results/figures_jpg/Figure_1.jpg">
 </p>
 
 This repository contains a realistic three-dimensional hydrodynamic model of Lake Michigan
 coupled to observed riverine phosphorus inputs. The purpose of the model is
-to assess the redistribution of tributary-derived phosphorus in the lake.
-Phosphorus is input to the lake from 11 tributaries that capture 70% of the annual load ([Rossmann 2006](https://www.epa.gov/sites/production/files/2015-08/documents/lmmbp-pcb-report.pdf)).
+to assess the redistribution of a tributary-derived tracer in the lake. 
+The tracer is input to the lake from 11 tributaries.
 
 The quantitative framework is applicable to a wide range of pollutants and waterbodies and can help to guide coastal management efforts.
 
@@ -17,8 +17,8 @@ If you have any questions or concerns, please either open up an issue in this re
 
 ## model
 This directory contains the MITgcm source files, modified code,
-and data to run the MITgcm-Michigan-Phosphorus model.
-The MITgcm source code is continuously being updated and is feely available from the developers. The most recent source code is available [here](https://github.com/MITgcm/MITgcm). The source code used in MITgcm-Michigan-Phosphorus is contained in `source`.
+and data to run the MITgcm-Lake-Michigan-tracer model.
+The MITgcm source code is continuously being updated and is feely available from the developers. The most recent source code is available [here](https://github.com/MITgcm/MITgcm). The source code used in MITgcm-Lake-Michigan-tracer is contained in `source`.
 
 - `source` = model source code (**do not modify these files**)
 - `code` = modifications to source files
@@ -35,16 +35,16 @@ This directory contains model output and other data analyzed in this project. Ra
 Some files are compressed to `tar.gz` file. `tar -xzf file_name.tar.gz` will unpack `tar.gz` files.
 - `raw` = raw or unprocesed data.
     #### Daily output of surface phosphorus concentration for each river:
-    * [Surface phosphorus output for 2007](https://figshare.com/articles/ptr_tave_0000315360_surf_nc/7040042)
-    * [Surface phosphorus output for 2008](https://figshare.com/articles/ptr_tave_0000473040_surf_nc/7040048)
-    * [Surface phosphorus output for 2009](https://figshare.com/articles/ptr_tave_0000631152_surf_nc/7040051)
-    * [Surface phosphorus output for 2010](https://figshare.com/articles/ptr_tave_0000788832_surf_nc/7043378)
+    * [Surface output for 2007](https://figshare.com/articles/ptr_tave_0000315360_surf_nc/7040042)
+    * [Surface output for 2008](https://figshare.com/articles/ptr_tave_0000473040_surf_nc/7040048)
+    * [Surface output for 2009](https://figshare.com/articles/ptr_tave_0000631152_surf_nc/7040051)
+    * [Surface output for 2010](https://figshare.com/articles/ptr_tave_0000788832_surf_nc/7043378)
 
     #### Daily output of 3D phosphorus concentration for each river (each file is 24Gb):
-    * [3D phosphorus output for 2007](https://figshare.com/articles/ptr_tave_0000315360_glob_nc_tar_gz/7066520)
-    * [3D phosphorus output for 2008](https://figshare.com/articles/ptr_tave_0000473040_glob_nc_tar_gz/7066538)
-    * [3D phosphorus output for 2009](https://figshare.com/articles/ptr_tave_0000631152_glob_nc_tar_gz/7066553)
-    * [3D phosphorus output for 2010](https://figshare.com/articles/ptr_tave_0000788832_glob_nc_tar_gz/7066571)
+    * [3D output for 2007](https://figshare.com/articles/ptr_tave_0000315360_glob_nc_tar_gz/7066520)
+    * [3D output for 2008](https://figshare.com/articles/ptr_tave_0000473040_glob_nc_tar_gz/7066538)
+    * [3D output for 2009](https://figshare.com/articles/ptr_tave_0000631152_glob_nc_tar_gz/7066553)
+    * [3D output for 2010](https://figshare.com/articles/ptr_tave_0000788832_glob_nc_tar_gz/7066571)
 
     #### Daily output of 3D temperature and current velocities (each file is 14Gb):
     * [3D physical output for 2007](https://figshare.com/articles/tave_0000315360_glob_nc_tar_gz/7066583)
