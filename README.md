@@ -11,7 +11,7 @@ The tracer is input to the lake from 11 tributaries.
 
 The quantitative framework is applicable to a wide range of pollutants and waterbodies and can help to guide coastal management efforts.
 
-[doi.org/10.6084/m9.figshare.c.4222538.v1](https://doi.org/10.6084/m9.figshare.c.4222538.v1) contains a collection of input files to force MITgcm-Michigan-Phosphorus and output from the simulation.
+[doi.org/10.6084/m9.figshare.c.4222538](https://doi.org/10.6084/m9.figshare.c.4222538) contains a collection of input files to force MITgcm-Michigan-Phosphorus and output from the simulation.
 
 If you have any questions or concerns, please either open up an issue in this repository or contact Luke directly (gloege at ldeo.columbia.edu).
 
